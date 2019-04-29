@@ -1,0 +1,220 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="RM_MASTER.master.cs" Inherits="RM_MASTER" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="icon" href="img/core-img/favicon.ico"/>
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="style1.css"/>
+
+
+    <style>
+body {
+  font-family: "Lato", Sans-Serif;
+}
+
+/* Fixed sidenav, full height */
+.sidenav {
+  height: 700px;
+  width: 200px;
+  position:relative;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: Gray ;
+  overflow-x: hidden;
+  padding-top: 10px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #000000;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #000000;
+}
+
+/* Main content */
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: white;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: white;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+
+
+
+   
+   <br />
+   <br />
+  
+ <body>
+<div class="main-header-area" id="Div1">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12 h-100">
+                        <div class="main-menu h-100">
+                            <nav class="navbar h-100 navbar-expand-lg">
+                                <!-- Logo Area  -->
+                                <a class="navbar-brand" href=""> <I>BANGALORE ANTIBIOTICS <br />& BIOLOGICAL PVT.LTD</I></b></a>
+
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+                                <div class="collapse navbar-collapse" id="Div2">
+                                    <!-- Menu Area -->
+                                     <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="MAIN.aspx">Home <span class="sr-only">(current)</span></a>
+                                        </li>
+  
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="LOGIN.aspx">LOGOUT <span class="sr-only">(current)</span></a>
+                                        </li>
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="NEWPWD.aspx">CHANGE PASSWORD <span class="sr-only">(current)</span></a>
+                                        </li>
+                                   </ul>
+                                  </div>
+                                 
+
+      
+                                  
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+   
+   <br />
+   <br />
+   <div>
+      <form id="form2" runat="server">
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder3" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    </div>
+   
+    
+    <div class="sidenav">
+    <br />
+    <br /><br />
+    </br>
+
+
+
+     
+
+
+ <button class="dropdown-btn"> AM MANAGEMENT
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="RM_VIEW_ABM.aspx">Allot district</a>
+      <a href="RM_VIEW_PMR.aspx">Allot PMR</a>
+    
+  </div>
+
+  
+ <button class="dropdown-btn"> AM TARGET
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="">TARGET FIX</a>
+    <a href="">UPDATE</a>
+  </div>
+
+  
+   <button class="dropdown-btn">View
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="">Reports</a>
+    <a href="">Request</a>
+  </div>
+
+</div>
+
+
+<script>
+    /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }
+</script>
+	 <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="js/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+  <%--  <form id="form1" runat="server">
+   <%-- <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>--%>
+    </form>--%>
+</body>
+</html>
